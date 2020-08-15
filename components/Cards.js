@@ -63,4 +63,4 @@ function moreCards(object){
     whoDunIt.textContent = `By ${object.authorName}`;
 
     return card;
-}
+}})
