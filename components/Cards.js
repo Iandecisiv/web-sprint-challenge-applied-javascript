@@ -24,19 +24,19 @@ const cardCard = document.querySelector(".cards-container");
 
 axios.get("https://lambda-times-api.herokuapp.com/articles")
     .then(response => {
-        // console.log(response);
         Object.values(response.data.articles).forEach(item => {
             item.forEach(articles => {
                 cardCard.append(moreCards(articles))
-            }
-        )
-
+            })
+        
+            console.log(response);
     })
     .catch((error) => {
-        console.log("It broke?... It broke.");
+        console.error("It broke?... It broke.");
         console.log(error);
      })
 
+    })
 
 function moreCards(object){
 
@@ -57,10 +57,15 @@ function moreCards(object){
     imgcon.classList.add('img-container');
 
     const img = document.createElement('img');
-    img.src = object.headline;
+    imgcon.appendChild(img);
+    img.src = object.authorPhoto;
 
-    const whoDunIt = document.createElement('span');  
+    const whoDunIt = document.createElement('span'); 
+    author.appendChild(whoDunIt); 
     whoDunIt.textContent = `By ${object.authorName}`;
 
+    headline.addEventListener("click", () => {
+        console.log(object.headline)
+    })
     return card;
-}})
+}
