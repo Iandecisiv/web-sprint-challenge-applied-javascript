@@ -26,7 +26,8 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
 
   function createTab(object){
     const div = document.createElement("div");
-    div.classList.add("tab");
-    div.innerHTML = object;
+        div.classList.add("tab");
+        div.innerHTML = object;
+        
     return div;
 };

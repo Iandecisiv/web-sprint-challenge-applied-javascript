@@ -41,28 +41,28 @@ axios.get("https://lambda-times-api.herokuapp.com/articles")
 function moreCards(object){
 
     const card = document.createElement('div');
-    card.classList.add('card');
+        card.classList.add('card');
     
     const headline = document.createElement('div');
-    card.appendChild(headline);
-    headline.classList.add('headline');
-    headline.textContent = object.headline;
+        card.appendChild(headline);
+        headline.classList.add('headline');
+        headline.textContent = object.headline;
 
     const author = document.createElement('div');
-    card.appendChild(author);
-    author.classList.add('author');
+        card.appendChild(author);
+        author.classList.add('author');
 
     const imgcon = document.createElement('div');
-    author.appendChild(imgcon);
-    imgcon.classList.add('img-container');
+        author.appendChild(imgcon);
+        imgcon.classList.add('img-container');
 
     const img = document.createElement('img');
-    imgcon.appendChild(img);
-    img.src = object.authorPhoto;
+        imgcon.appendChild(img);
+        img.src = object.authorPhoto;
 
     const whoDunIt = document.createElement('span'); 
-    author.appendChild(whoDunIt); 
-    whoDunIt.textContent = `By ${object.authorName}`;
+        author.appendChild(whoDunIt); 
+        whoDunIt.textContent = `By ${object.authorName}`;
 
     headline.addEventListener("click", () => {
         console.log(object.headline)
